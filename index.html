@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New City Bakeries Registration</title>
+
+    <!--style.css-->
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <!--Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h1>New City Bakeries</h1>
+                </header>
+            </div>
+        </div>
+
+        <form id="myform" name="myform">
+          <header>
+            123 Ligma Drive SE
+            <br>  
+            Calgary, Alberta
+            <br>
+            403-123-1234
+            <br>
+            newcitybakeries@gmail.com
+          </header>
+          <br>
+        <h2><u>Step 1: Registration Form</u></h2>
+        <div class="row g-3">
+            <div class="col-lg-6">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstname" placeholder="Joe" pattern="[A-Za-z]{1,32}" required>
+            </div>
+            <div class="col-lg-6">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastname" placeholder="Mama" pattern="[A-Za-z]{1,32}" required>
+            </div>
+            <div class="col-lg-6">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+              </div>
+              <div class="col-lg-6">
+                <label for="address2" class="form-label">Address 2</label>
+                <input type="text" class="form-control" id="address2" placeholder="Apartment, studio, or floor">
+              </div>
+              <div class="col-lg-6">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" required>
+              </div>
+              <div class="col-lg-3">
+                <label for="province" class="form-label">Province</label>
+                <select id="province" class="form-select" required>
+                  <option selected disabled value="">Choose...</option>
+                  <option value="AB">Alberta</option>
+                  <option value="BC">British Columbia</option>
+                  <option value="MB">Manitoba</option>
+                  <option value="NB">New Brunswick</option>
+                  <option value="NL">Newfoundland and Labrador</option>
+                  <option value="NS">Nova Scotia</option>
+                  <option value="NT">Northwest Territories</option>
+                  <option value="NU">Nunavut</option>
+                  <option value="ON">Ontario</option>
+                  <option value="PE">Prince Edward Island</option>
+                  <option value="QC">Quebec</option>
+                  <option value="SK">Saskatchewan</option>
+                  <option value="YT">Yukon</option>
+                </select>
+              </div>
+              <div class="col-lg-3">
+                <label for="postalcode" class="form-label">Postal Code</label>
+                <input type="text" class="form-control" id="postalcode" required placeholder="A1AA1A, A1A A1A, A1A-A1A" pattern="^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$" maxlength=7>
+              </div>    
+            <div class="col-lg-6">
+              <label for="tel" class="form-label">Telphone</label>
+              <input type="tel" class="form-control" id="telphone" placeholder="xxxxxxxxx" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" maxlength="10" required>
+            </div>
+            <div class="col-lg-6">
+                <label for="telphone" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required placeholder="email@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+              </div>
+        </div>
+        </div> <!--End of Container-->
+
+        <div class="container">   
+          <div class="row g-3">
+              <div class="col-lg-7">
+                  <h2><u>Step 2: Cake Selection</u></h2>
+                  <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                    <select class="form-select" id="caketype" onchange = "verifyAnswer()" required>
+                      <option selected disabled value="">Choose Type of Cake</option>
+                      <option value="Round Cake">Round Cake</option>
+                      <option value="Sheet Cake">Sheet Cake</option>
+                    </select>
+                  </div>
+                <p><i>If you have selected Sheet Cakes, please choose either a Square Sheet Cake or Rectangular Sheet Cake. Otherwise, continue to step 3.</i></p>
+                <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputGroupSelect02">Options</label>
+                  <select class="form-select" id="sheetcaketype" disabled>
+                    <option selected disabled value="">Choose Type of Sheet Cake</option>
+                    <option value="Rectangular Cake">Rectangular Cake</option>
+                    <option value="Square Cake">Square Cake</option>
+                  </select>
+                </div>
+
+              </div>
+              </div>             
+            </div> <!--End of Container-->
+
+
+
+        <div class="container">   
+        <div class="row g-3">
+            <div class="col-lg-7">
+                <h2><u>Step 3: Layer Selection</u></h2>
+                <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                  <select class="form-select" id="layeramount" required>
+                    <option selected disabled value="">Choose Amount of Layers</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+            </div>             
+          </div> <!--End of Container-->
+          
+          <div class="container">   
+            <div class="row g-3">
+              <h2><u>Step 4: Pricing</u></h2>
+            </div>
+            <div class="row g-3">
+              <div class="col-xlg">
+                  <h3>Pricing for Round Cakes</h3>
+                  <p><i>Minimum radius: 15cm</i></p>
+                  <p><i>Maximum radius: 30cm</i></p>
+                  <table class="table">
+                      <thead>
+                          <tr class="table-info">
+                          <th scope="col">Layer</th>
+                          <th scope="col">Minimum Radius</th>
+                          <th scope="col">Maxiumum Radius</th>
+                          <th scope="col">Minimum Area</th>
+                          <th scope="col">Maxiumum Area</th>
+                          <th scope="col">Base Price</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>30 cm</td>
+                          <td>60 cm</td>
+                          <td>706.86 cm<sup>2</sup></td>
+                          <td>2827.43 cm<sup>2</sup></td>
+                          <td>$15</td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+              <div class="col-xlg">
+                <h3>Pricing for Sheet Cakes</h3>
+                <p><i>Minimum length & width: 30cm & 30cm</i></p>
+                <p><i>Maximum length & width: 60cm & 45cm</i></p>
+                <table class="table">
+                  <thead>
+                    <tr class="table-primary">
+                      <th scope="col">Layer</th>
+                      <th scope="col">Minimum Perimeter</th>
+                      <th scope="col">Maxiumum Perimeter</th>
+                      <th scope="col">Minimum Area</th>
+                      <th scope="col">Maxiumum Area</th>
+                      <th scope="col">Base Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>120 cm</td>
+                        <td>219 cm</td>
+                        <td>900 cm<sup>2</sup></td>
+                        <td>2700 cm<sup>2</sup></td>
+                        <td>$18</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            </div>
+  
+            <div class="row g-3">
+                <div class="col-lg-6">
+                <h4>Note:</h4>      
+                <p>Cost of the cake increases by <strong>both</strong> <u>size</u> and the <u>number of layers.</u></p>
+                <p>Increasing the dimensions <strong>adds</strong> <u>$0.02 per cm<sup>2</sup></u>  above the base cost</p>
+                <p>Adding another layer increases the base cost an <strong>additional</strong> <u>50% per layer.</u></p>
+                </div>
+            </div>
+        </div> <!--End of Container-->
+
+        <div class="container">   
+          <div class="row g-3">
+              <h2><u>Step 5: Edit Dimensions</u></h2>
+              <div class="col-lg-4">
+                <label for="exampleFormControlInput1" class="form-label">Increase Radius from base</label>
+                <input type="number" class="form-control" id="radiusvalue" min="15" max="30" value="15" disabled>
+              </div>
+
+
+            <div class="col-lg-4">
+              <label for="exampleFormControlInput1" class="form-label">Increase Length from base</label>
+              <input type="number" class="form-control" id="lengthvalue" min="30" max="60" value="30" disabled>
+            </div>
+            <div class="col-lg-4">
+              <label for="exampleFormControlInput1" class="form-label">Increase Width from base</label>
+              <input type="number" class="form-control" id="widthvalue" min="30" max="45" value="30" disabled>
+            </div>
+          </div>
+        </div> <!--End of Container-->
+
+
+        <div class="container">   
+          <div class="row g-3">
+            <div class="col-lg-4">
+              <h2><u>Step 6: Additional Choices:</u></h2>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="topping1" name="t1" onchange="checkCheckbox()">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Cream Cheese icing is an extra $5
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="topping2"  name="t2" onchange="checkCheckbox()">
+                <label class="form-check-label" for="flexCheckChecked">
+                  Fruit and Almonds is an extra $7
+                </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="topping3" name="t3" onchange="checkCheckbox()">
+            <label class="form-check-label" for="flexCheckChecked">
+                Fruit jam filling between layers is an extra $4
+            </label>
+          </div>
+            </div>
+            </div>
+          </div> <!--End of Container-->
+
+
+        <div class="container">   
+        <div class="row g-3">
+        <h2><u>Step 7: Submission</u></h2>
+        <div class="col-lg-2">
+            <label for="registrationDate" class="form-label">Registration Date</label>
+            <input type="date" class="form-control" name="date" id="date" required>
+        </div>
+        </div>
+        <div class="row g-3">
+        <div class="col-lg-6">
+            <br>
+            <button type="submit" class="btn btn-xlrg btn-primary">Submit</button>
+            <button type="reset" class="btn btn-xlr btn-secondary">Clear</button>
+        </div>
+        </div>
+    </form>
+
+    <footer>
+      Contact Us:
+      <br>
+      <a href = "mailto: newcitybakeries@gmail.com" target="_blank">Send Email</a>
+      <br>
+    <a href="tel:" target="_blank">403-123-1234</a>
+      <br>
+    <a href="" target="_blank">Instagram</a>
+    </footer>
+          </div> <!--End of Container-->
+
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div id="output0" class=""></div>
+              <div id="output1"></div>
+              <div id="output2"></div>
+              <div id="output3"></div>
+              <div id="output4"></div>
+              <div id="output5"></div>
+              <div id="output6"></div>
+              <div id="output7"></div>
+              <div id="output8"></div>
+              <div id="output9"></div>
+              <br>
+              <div id="output22"></div>
+              <div id="output10"></div>
+              <div id="output11"></div>
+              <div id="output12"></div>
+              <br>
+              <div id="output13"></div>
+              <div id="output14"></div>
+              <div id="output15"></div>
+              <br>
+              <div id="output16"></div>
+              <div id="output17"></div>
+              <div id="output18"></div>
+              <br>
+              <div id="output19"></div>
+              <br>
+              <div id="output20"></div>
+              <br>
+              <div id="output21" class="animate-charcter"></div>
+
+            </div>
+            </div>
+        </div> <!--end of output container-->
+    
+    <script src="/newcitybakeries/part3.js"></script>
+</body>
+</html>
